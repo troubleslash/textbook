@@ -1,0 +1,17 @@
+def efss(arr,x):  #必须是有序序列
+    i=0
+    j=len(arr)-1 #整数
+    for k in range(int(j/2)+1): #选靠中间的点
+        if i > j:
+            print -1
+        zj = int((i+j)/2)
+        if arr[zj] == x:     #不断缩小范围
+            return zj
+        elif arr[zj] > x:
+            j = zj-1
+        else:
+            i = zj+1
+wt = [2,4,5,6,7,8]
+print(efss(wt,7)) 
+
+搜索该数在列表中的下标、指数：4（第五个）
