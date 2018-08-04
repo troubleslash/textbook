@@ -1,0 +1,23 @@
+def kp(arr,i,j):   #快排总调用函数，递归
+    if i < j:
+        base = kspx(arr,i,j)
+        kp(arr,i,base)
+        kp(arr,base+1,j)
+def kspx(arr,i,j): #快排一次的函数
+    base = arr[i]  #选基准
+    while i<j:
+        while i<j and arr[j]>=base:   #比基准大就放到下面
+            j-=1
+        while i<j and arr[j]<base:    #比基准小就跟i换位，并使i+1
+            arr[i] = arr[j]
+            i+=1
+            arr[j] = arr[i]
+    arr[i]= base
+    return i
+ww=[3,5,6,7,13,1,111,3123,5,11,1,13]
+kp(ww,0,len(ww)-1)
+print(ww) 
+
+缺点：最坏情况运行时间：（n**2）
+优点：平均期望： （nlgn）
+使用情况较多
