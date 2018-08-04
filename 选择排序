@@ -1,0 +1,14 @@
+# -*- coding: utf-8 -*-
+def xzpx(arr):
+    for i in range(0,len(arr)-1):    #每趟排序
+        k = i   #标记位
+        for j in (i+1,len(arr)-1):   #每趟最小数
+            if arr[j]<arr[k]:
+                k = j
+        arr[i],arr[k] = arr[k],arr[i]
+abc=[3,5,7,8,9,232,44,3,243,65]
+xzpx(abc)
+print(abc)
+
+缺点：最坏运行情况和平均运行时间：（n**2）
+      对于相等的数不能排序，此题结果：[3, 5, 7, 8, 9, 44, 3, 65, 232, 243]
